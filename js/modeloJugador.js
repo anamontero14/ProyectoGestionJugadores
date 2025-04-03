@@ -1,10 +1,18 @@
 class ModeloJugador {
 
     constructor() {
-        this.jugadores = [];
+        this.id = 0;
     }
 
     agregarJugador(jugador) {
-        return this.jugadores.push(jugador);
+
+        // Incrementamos el id
+        this.id++;
+
+        // Almacenamos el jugador en localStorage
+        localStorage.setItem(this.id, JSON.stringify(jugador));
+
+        // Actualizamos el nuevo id en localStorage
+        localStorage.setItem("ultimoId", this.id);
     }
 }
