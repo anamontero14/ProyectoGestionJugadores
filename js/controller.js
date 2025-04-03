@@ -1,6 +1,6 @@
 class controller {
     constructor() {
-        this.model = new model();
-        this.view = new view();
+        this.vista = new vista();
+        this.modeloJugador = new modeloJugador();
     }
 }
