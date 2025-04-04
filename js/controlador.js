@@ -17,4 +17,8 @@ class Controlador {
 
         this.modeloJugador.agregarJugador(jugador);
     }
+
+
+
+ 
 }
