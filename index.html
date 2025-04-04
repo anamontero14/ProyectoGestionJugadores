@@ -34,14 +34,23 @@
                 <option value="DC">DC</option>
             </select>
         </fieldset>
-        <button type="button" id="boton">Añadir</button>
+        <button type="button" id="boton">Enviar</button>
     </form>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/jugador.js"></script>
+    <br>
+
+    <div id="mostrarJugadoresAñadidos">
+
+    </div>
+
     <script src="js/modeloJugador.js"></script>
     <script src="js/vista.js"></script>
     <script src="js/controlador.js"></script>
+    <script>
+        //inicializar la aplicación
+        const controller = new Controlador();
+    </script>
+
 </body>
 
 </html>
