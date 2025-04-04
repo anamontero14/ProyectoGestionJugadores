@@ -1,1 +1,7 @@
-//adfad
+class Vista {
+
+    constructor() {
+        
+    }
+
+}
