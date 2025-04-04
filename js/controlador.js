@@ -7,6 +7,7 @@ class Controlador {
         this.modeloJugador = new modeloJugador();
     }
 
+
     añadeJugador() {
 
         let nombreJugador = $("#nombreJugador").val();
