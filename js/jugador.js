@@ -20,4 +20,7 @@ class Jugador {
     //setEquipo(equipo) {
         //if ()
     //}
+
 }
+
+export default Jugador;
