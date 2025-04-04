@@ -1,6 +1,7 @@
 class Vista {
 
     constructor() {
+        
         //contenedor donde se iran mostrando los jugadores
         this.mostrarJugadores = document.getElementById("mostrarJugadoresAñadidos");
 
