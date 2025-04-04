@@ -1,12 +1,18 @@
-import Jugador from './jugador';
-
 class Controlador {
     
     constructor() {
         this.vista = new vista();
         this.modeloJugador = new modeloJugador();
+        this.jugador = new Jugador();
+        this.bindEvents();
     }
 
+
+    bindEvents() {
+        $("#boton").click(function() {
+            this.añadeJugador();
+        })
+    }
 
     añadeJugador() {
 
