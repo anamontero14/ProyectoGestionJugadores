@@ -1,37 +1,19 @@
 class Vista {
 
-    constructor() {
+    mostrarJugadores(jugadores) {
         
-        //contenedor donde se iran mostrando los jugadores
-        this.mostrarJugadores = document.getElementById("mostrarJugadoresAñadidos");
+        for (let i in jugadores) {
 
-        //boton
-        this.boton = document.getElementById("boton");
-    }
+            let jugador = jugadores[i];
 
-    mostrarJugador(jugador) {
-        //muestro los jugador en la consola
-        console.log("Datos: " + jugador);
+            let jugadorFila = "<tr>" +
+            "<td>" + jugador.nombre + "</td>" +
+            "<td>" + jugador.posicion + "</td>" +
+            "<td>" + jugador.fechaNacimientos + "</td>" +
+            "</tr>";
 
-        //limpiarlo
-        this.mostrarJugadores.innerHTML = '';
-
-        //lista
-        const ol = document.createElement('ol');
-
-        for (let i = 0; i < jugador.length; i++) {
-
-            const jugador = document.createElement('li');
-
-            jugador.textContent = jugador[i].descripcion;
-
-            ol.appendChild(jugador);
-        };
-
-        this.mostrarJugadores.appendChild(ol);
-
-        //muestro los jugador por pantalla
-        console.log(jugador);
+            $("#jugadores").append(jugadorFila);
+        }
     }
 
     clearInputs() {
