@@ -2,7 +2,7 @@ class Vista {
 
     constructor() {
         // Contenedor donde se irán mostrando los jugadores
-        this.mostrarJugadores = document.getElementById("mostrarJugadoresAñadidos");
+        this.divMostrarJugadores = document.getElementById("mostrarJugadoresAñadidos");
         // Botón
         this.boton = document.getElementById("boton");
     }
@@ -12,7 +12,7 @@ class Vista {
         console.log("Datos:", jugadores);
 
         // Limpiar el contenedor
-        this.mostrarJugadores.innerHTML = '';
+        this.divMostrarJugadores.innerHTML = '';
 
         // Crear lista ordenada
         const ol = document.createElement('ol');
@@ -30,7 +30,7 @@ class Vista {
             ol.appendChild(jugadorItem);
         }
 
-        this.mostrarJugadores.appendChild(ol);
+        this.divMostrarJugadores.appendChild(ol);
     }
 
     calcularEdad(añoNacimiento) {
