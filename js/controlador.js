@@ -8,7 +8,7 @@ class Controlador {
 
 
     bindEvents() {
-        $("#boton").click(() => {
+        $("#botonAgregarJugadores").click(() => {
             this.añadeJugador();
 
             let jugadores = this.modeloJugador.obtenerJugadores();

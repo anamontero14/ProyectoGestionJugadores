@@ -1,25 +1,27 @@
 class ModeloJugador {
     
     constructor() {
-        this.bdJugador = [];
-        localStorage.setItem("J", this.bdJugador);
+        
+        if (!localStorage.getItem("J")) {
+            localStorage.setItem("J", JSON.stringify([]));
+        }
     }
 
     agregarJugador(jugador) {
-        
-        // Obtenemos el array del localStorage
-        let jugadores = localStorage.getItem('J');
 
-        // Añadimos el jugador
+        // Obtener el array de jugadores desde localStorage
+        let jugadores = JSON.parse(localStorage.getItem('J'));
+
+        // Añadir el nuevo jugador
         jugadores.push(jugador);
+
+        // Guardar de nuevo en localStorage
+        localStorage.setItem('J', JSON.stringify(jugadores));
     }
 
     obtenerJugadores() {
-        
-        // Devolvemos el array del localStorage
-        return localStorage.getItem('J');
+
+        // Devolver el array de jugadores
+        return JSON.parse(localStorage.getItem('J'));
     }
-
-
-    
 }
