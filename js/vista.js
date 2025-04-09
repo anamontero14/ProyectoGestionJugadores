@@ -18,7 +18,7 @@ class Vista {
 
         for (let i = 0; i < jugadores.length; i++) {
             const jugadorItem = document.createElement('li');
-
+            //sdd
             // Mostrar información relevante del jugador
             jugadorItem.textContent = `
                 Nombre: ${jugadores[i].nombre}, 
