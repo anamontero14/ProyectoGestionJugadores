@@ -12,25 +12,25 @@ class Vista {
         console.log("Datos:", jugadores);
 
         // Limpiar el contenedor
-        this.divMostrarJugadores.innerHTML = '';
-
-        // Crear lista ordenada
-        const ol = document.createElement('ol');
+        $("#cuerpoTabla").empty();
 
         for (let i = 0; i < jugadores.length; i++) {
-            const jugadorItem = document.createElement('li');
 
-            // Mostrar información relevante del jugador
-            jugadorItem.textContent = `
-                Nombre: ${jugadores[i].nombre}, 
-                Fecha de nacimiento: ${jugadores[i].añoNacimiento}, 
-                Posición: ${jugadores[i].posicion}
-            `;
+            //creo las variables que almacenan los datos de las tablas
+            //const fila = document.createElement('tr');
 
-            ol.appendChild(jugadorItem);
+            let tdNombre = $("#nombre").val();
+            let tdFechaNacimiento = $("#nombre").val();
+            const tdPosicion = document.createElement('td');
+
+            const fila = "<tr>" +
+                "<td>" + tdNombre + "</td>" + "<td>" + tdFechaNacimiento + "</td>"
+                + "<td>" + tdPosicion + "</td>" +
+                "</tr>";
+
+            $("#cuerpoTabla").append(fila);
         }
 
-        this.divMostrarJugadores.appendChild(ol);
     }
 
     /*
