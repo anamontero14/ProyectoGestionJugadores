@@ -2,7 +2,7 @@ class Jugador {
 
     constructor(nombre, posicion, añoNacimiento) {
 
-        if (nombre != null && !nombre.isBlank()) {
+        if (nombre != null) {
             this.nombre = nombre;
         }
 
@@ -22,5 +22,3 @@ class Jugador {
     //}
 
 }
-
-export default Jugador;

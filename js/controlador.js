@@ -1,10 +1,16 @@
-import Jugador from './jugador';
-
 class Controlador {
     
     constructor() {
-        this.vista = new vista();
-        this.modeloJugador = new modeloJugador();
+        this.vista = new Vista();
+        this.modeloJugador = new ModeloJugador();
+        this.bindEvents();
+    }
+
+
+    bindEvents() {
+        $("#boton").click(() => {
+            this.añadeJugador();
+        });
     }
 
     añadeJugador() {
@@ -13,7 +19,7 @@ class Controlador {
         let añoNacimientoJugador = $("#añoNacimientoJugador").val();
         let posicionJugador = $("#posicionJugador").val();
 
-        let jugador = new Jugador(nombreJugador, añoNacimientoJugador, posicionJugador);
+        let jugador = new Jugador(nombreJugador, posicionJugador, añoNacimientoJugador);
 
         this.modeloJugador.agregarJugador(jugador);
     }

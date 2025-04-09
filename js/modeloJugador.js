@@ -11,8 +11,5 @@ class ModeloJugador {
 
         // Almacenamos el jugador en localStorage
         localStorage.setItem(this.id, JSON.stringify(jugador));
-
-        // Actualizamos el nuevo id en localStorage
-        localStorage.setItem("ultimoId", this.id);
     }
 }
