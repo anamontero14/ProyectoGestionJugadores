@@ -1,57 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGREGAR JUGADORES</title>
+    <title>Agregar Jugadores</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-    <h1>Agregar jugadores</h1>
+    <div class="container py-5">
+        <div class="text-center mb-4">
+            <h1 class="fw-bold">Agregar Jugadores</h1>
+        </div>
 
-    <!--formulario para preguntarle al usuario los datos del jugador-->
-    <form>
-        <fieldset>
-            <label>Nombre</label>
-            <input type="text" id="nombreJugador">
+        <!-- Formulario de jugadores -->
+        <form class="bg-white p-4 rounded shadow-sm mb-5">
+            <fieldset class="row g-3">
+                <div class="col-md-4">
+                    <label for="nombreJugador" class="form-label">Nombre</label>
+                    <input type="text" id="nombreJugador" class="form-control" placeholder="Ej. Lionel Messi">
+                </div>
 
-            <label>Año de nacimiento</label>
-            <input type="date" id="añoNacimientoJugador" value="1000-01-01">
+                <div class="col-md-4">
+                    <label for="añoNacimientoJugador" class="form-label">Año de Nacimiento</label>
+                    <input type="date" id="añoNacimientoJugador" value="2000-01-01" class="form-control">
+                </div>
 
-            <select name="posiciones" id="posicionJugador">
-                <option selected>Selecciona posición</option>
-                <option value="POR">POR</option>
-                <option value="DFC">DFC</option>
-                <option value="LI">LI</option>
-                <option value="LD">LD</option>
-                <option value="MCD">MCD</option>
-                <option value="MCO">MCO</option>
-                <option value="MC">MC</option>
-                <option value="ED">ED</option>
-                <option value="EI">EI</option>
-                <option value="DC">DC</option>
-            </select>
-        </fieldset>
-        <button type="button" id="boton">Enviar</button>
-    </form>
+                <div class="col-md-4">
+                    <label for="posicionJugador" class="form-label">Posición</label>
+                    <select name="posiciones" id="posicionJugador" class="form-select">
+                        <option selected disabled>Selecciona posición</option>
+                        <option value="POR">Portero (POR)</option>
+                        <option value="DFC">Defensa Central (DFC)</option>
+                        <option value="LI">Lateral Izquierdo (LI)</option>
+                        <option value="LD">Lateral Derecho (LD)</option>
+                        <option value="MCD">Mediocentro Defensivo (MCD)</option>
+                        <option value="MC">Mediocentro (MC)</option>
+                        <option value="MCO">Mediocentro Ofensivo (MCO)</option>
+                        <option value="ED">Extremo Derecho (ED)</option>
+                        <option value="EI">Extremo Izquierdo (EI)</option>
+                        <option value="DC">Delantero Centro (DC)</option>
+                    </select>
+                </div>
 
-    <br>
+                <div class="col-12 text-end">
+                    <button type="button" id="boton" class="btn btn-primary">Agregar Jugador</button>
+                </div>
+            </fieldset>
+        </form>
 
-    <div id="mostrarJugadoresAñadidos">
-
+        <!-- Contenedor para mostrar jugadores añadidos -->
+        <div id="mostrarJugadoresAñadidos" class="bg-white p-4 rounded shadow-sm">
+            <h4 class="mb-4">Lista de Jugadores Añadidos</h4>
+            <!-- Aquí se insertarán dinámicamente los jugadores -->
+        </div>
     </div>
 
+    <!-- jQuery y tus scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/jugador.js"></script>
     <script src="js/modeloJugador.js"></script>
     <script src="js/vista.js"></script>
     <script src="js/controlador.js"></script>
     <script>
-        //inicializar la aplicación
+        // Inicializar la aplicación
         const controlador = new Controlador();
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
