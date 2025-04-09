@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGREGAR JUGADORES</title>
+</head>
+
+<body>
+
+    <h1>Agregar jugadores</h1>
+
+    <!--formulario para preguntarle al usuario los datos del jugador-->
+    <form>
+        <fieldset>
+            <label>Nombre</label>
+            <input type="text" id="nombreJugador">
+
+            <label>Año de nacimiento</label>
+            <input type="date" id="añoNacimientoJugador" value="1000-01-01">
+
+            <select name="posiciones" id="posicionJugador">
+                <option selected>Selecciona posición</option>
+                <option value="POR">POR</option>
+                <option value="DFC">DFC</option>
+                <option value="LI">LI</option>
+                <option value="LD">LD</option>
+                <option value="MCD">MCD</option>
+                <option value="MCO">MCO</option>
+                <option value="MC">MC</option>
+                <option value="ED">ED</option>
+                <option value="EI">EI</option>
+                <option value="DC">DC</option>
+            </select>
+        </fieldset>
+        <button type="button" id="boton">Enviar</button>
+    </form>
+
+    <br>
+
+    <div id="mostrarJugadoresAñadidos">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jugador.js"></script>
+    <script src="js/modeloJugador.js"></script>
+    <script src="js/vista.js"></script>
+    <script src="js/controlador.js"></script>
+    <script>
+        //inicializar la aplicación
+        const controlador = new Controlador();
+    </script>
+
+</body>
+
+</html>

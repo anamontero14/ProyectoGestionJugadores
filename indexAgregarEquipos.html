@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGREGAR EQUIPOS</title>
+</head>
+
+<body>
+    <h1>Agregar equipos</h1>
+
+    <!--formulario para preguntarle al usuario los datos del equipo-->
+    <form>
+        <fieldset>
+            <label>Nombre</label>
+            <input type="text" id="nombreEquipo">
+
+            <label>Ciudad</label>
+            <input type="text" id="ciudadEquipo">
+
+            <label>Estadio</label>
+            <input type="text" id="estadioEquipo">
+        </fieldset>
+        <button type="button" id="boton">Enviar</button>
+    </form>
+
+    <br>
+
+    <div id="mostrarEquiposAñadidos">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jugador.js"></script>
+    <script src="js/modeloJugador.js"></script>
+    <script src="js/vista.js"></script>
+    <script src="js/controlador.js"></script>
+    <script>
+        //inicializar la aplicación
+        const controlador = new Controlador();
+    </script>
+</body>
+
+</html>
