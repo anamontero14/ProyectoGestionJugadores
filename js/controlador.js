@@ -10,7 +10,10 @@ class Controlador {
     bindEvents() {
         $("#boton").click(() => {
             this.añadeJugador();
-            this.muestraJugadores();
+
+            let jugadores = this.modeloJugador.obtenerJugadores();
+
+            this.vista.mostrarJugadores(jugadores);
         });
     }
 
