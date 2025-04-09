@@ -24,10 +24,4 @@ class Controlador {
 
         this.modeloJugador.agregarJugador(jugador);
     }
-
-    muestraJugadores() {
-        let jugadores = this.modeloJugador.obtenerJugadores();
-        console.log(jugadores);
-        this.vista.mostrarJugadores(jugadores);
-    }
 }
