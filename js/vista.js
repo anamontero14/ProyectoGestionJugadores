@@ -1,44 +1,45 @@
 class Vista {
 
     constructor() {
-        
-        //contenedor donde se iran mostrando los jugadores
+        // Contenedor donde se irán mostrando los jugadores
         this.mostrarJugadores = document.getElementById("mostrarJugadoresAñadidos");
-
-        //boton
+        // Botón
         this.boton = document.getElementById("boton");
     }
 
-    mostrarJugador(jugador) {
-        //muestro los jugador en la consola
-        console.log("Datos: " + jugador);
+    mostrarJugadores(jugadores) {
+        console.log("Datos:", jugadores);
 
-        //limpiarlo
+        // Limpiar el contenedor
         this.mostrarJugadores.innerHTML = '';
 
-        //lista
+        // Crear lista ordenada
         const ol = document.createElement('ol');
 
-        for (let i = 0; i < jugador.length; i++) {
+        for (let i = 0; i < jugadores.length; i++) {
+            const jugadorItem = document.createElement('li');
 
-            const jugador = document.createElement('li');
+            // Mostrar información relevante del jugador
+            jugadorItem.textContent = `
+                Nombre: ${jugadores[i].nombre}, 
+                Edad: ${this.calcularEdad(jugadores[i].añoNacimiento)}, 
+                Posición: ${jugadores[i].posicion}
+            `;
 
-            jugador.textContent = jugador[i].descripcion;
-
-            ol.appendChild(jugador);
-        };
+            ol.appendChild(jugadorItem);
+        }
 
         this.mostrarJugadores.appendChild(ol);
+    }
 
-        //muestro los jugador por pantalla
-        console.log(jugador);
+    calcularEdad(añoNacimiento) {
+        const añoActual = new Date().getFullYear();
+        return añoActual - new Date(añoNacimiento).getFullYear();
     }
 
     clearInputs() {
         document.getElementById("nombreJugador").value = "";
-        document.getElementById("añoNacimientoJugador").value = "1000-01-01";
+        document.getElementById("añoNacimientoJugador").value = "";
         document.getElementById("posicionJugador").value = "";
     }
-
 }
-

@@ -10,6 +10,7 @@ class Controlador {
     bindEvents() {
         $("#boton").click(() => {
             this.añadeJugador();
+            this.muestraJugadores();
         });
     }
 
@@ -23,8 +24,4 @@ class Controlador {
 
         this.modeloJugador.agregarJugador(jugador);
     }
-
-
-
- 
 }
