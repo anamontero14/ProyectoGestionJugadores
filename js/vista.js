@@ -23,7 +23,7 @@ class Vista {
             // Mostrar información relevante del jugador
             jugadorItem.textContent = `
                 Nombre: ${jugadores[i].nombre}, 
-                Edad: ${this.calcularEdad(jugadores[i].añoNacimiento)}, 
+                Edad: ${jugadores[i].añoNacimiento}, 
                 Posición: ${jugadores[i].posicion}
             `;
 
@@ -33,10 +33,10 @@ class Vista {
         this.divMostrarJugadores.appendChild(ol);
     }
 
-    calcularEdad(añoNacimiento) {
+    /*calcularEdad(añoNacimiento) {
         const añoActual = new Date().getFullYear();
         return añoActual - new Date(añoNacimiento).getFullYear();
-    }
+    }*/
 
     clearInputs() {
         document.getElementById("nombreJugador").value = "";
