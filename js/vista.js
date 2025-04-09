@@ -7,34 +7,20 @@ class Vista {
         this.boton = document.getElementById("boton");
     }
 
-    mostrarJugador(jugadores) {
-        console.log("Datos:", jugadores);
+    mostrarJugadores(jugadores) {
+        
+        for (let i in jugadores) {
 
-        // Limpiar el contenedor
-        this.mostrarJugadores.innerHTML = '';
+            let jugador = jugadores[i];
 
-        // Crear lista ordenada
-        const ol = document.createElement('ol');
+            let jugadorFila = "<tr>" +
+            "<td>" + jugador.nombre + "</td>" +
+            "<td>" + jugador.posicion + "</td>" +
+            "<td>" + jugador.fechaNacimientos + "</td>" +
+            "</tr>";
 
-        for (let i = 0; i < jugadores.length; i++) {
-            const jugadorItem = document.createElement('li');
-
-            // Mostrar información relevante del jugador
-            jugadorItem.textContent = `
-                Nombre: ${jugadores[i].nombre}, 
-                Edad: ${this.calcularEdad(jugadores[i].añoNacimiento)}, 
-                Posición: ${jugadores[i].posicion}
-            `;
-
-            ol.appendChild(jugadorItem);
+            $("#jugadores").append(jugadorFila);
         }
-
-        this.mostrarJugadores.appendChild(ol);
-    }
-
-    calcularEdad(añoNacimiento) {
-        const añoActual = new Date().getFullYear();
-        return añoActual - new Date(añoNacimiento).getFullYear();
     }
 
     clearInputs() {
