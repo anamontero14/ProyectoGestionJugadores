@@ -3,7 +3,7 @@ class ModeloJugador {
     agregarJugador(jugador) {
 
         // Creamos el id y lo inicializamos a 1
-        let id = 1;
+        let id = 0;
 
         // Si el localStorage no esta vacio
         if (localStorage.length > 0) {
@@ -18,7 +18,7 @@ class ModeloJugador {
         }
 
         // Almacenamos el jugador con la nueva clave
-        localStorage.setItem(id + 'J', JSON.stringify(jugador));
+        localStorage.setItem(++id + 'J', JSON.stringify(jugador));
             
     }
 
