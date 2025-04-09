@@ -2,9 +2,6 @@ class ModeloJugador {
     
     agregarJugador(jugador) {
 
-        // Creamos el id y lo inicializamos a 1
-        let id = 0;
-
         // Si el localStorage no esta vacio
         if (localStorage.length > 0) {
 
@@ -14,12 +11,15 @@ class ModeloJugador {
             // Extraemos el número al principio de la clave (por ejemplo, de "3J" obtenemos 3)
             let id = parseInt(lastKey);
 
-            console.log(id);
-        }
+            // Almacenamos el jugador con la nueva key
+            localStorage.setItem(++id + 'J', JSON.stringify(jugador));
 
-        // Almacenamos el jugador con la nueva clave
-        localStorage.setItem(++id + 'J', JSON.stringify(jugador));
-            
+        // Si el localStorage esta vacio
+        } else {
+
+            // Almacenamos el primer jugador con la key 1J
+            localStorage.setItem(1 + 'J', JSON.stringify(jugador));
+        }
     }
 
 
@@ -37,8 +37,11 @@ class ModeloJugador {
             // Si la key contiene la 'J'
             if (key.includes('J')) {
                 
+                // Obtenemos el jugador
+                let jugador = localStorage.getItem(key);
+
                 // Añadimos el jugador al array
-                jugadores.push(localStorage.getItem(key));
+                jugadores.push(JSON.parse(jugador));
             }
         }
 

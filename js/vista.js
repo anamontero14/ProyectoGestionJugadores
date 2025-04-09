@@ -8,6 +8,7 @@ class Vista {
     }
 
     mostrarJugadores(jugadores) {
+        
         console.log("Datos:", jugadores);
 
         // Limpiar el contenedor
