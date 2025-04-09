@@ -17,7 +17,7 @@ class Vista {
         // Crear lista ordenada
         const ol = document.createElement('ol');
 
-        for (let i = 0; i < jugadores.length; i++) {
+        for (let i = jugadores.length - 1; i > 0 ; i--) {
             const jugadorItem = document.createElement('li');
 
             // Mostrar información relevante del jugador
