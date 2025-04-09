@@ -7,7 +7,7 @@ class Vista {
         this.boton = document.getElementById("boton");
     }
 
-    mostrarJugador(jugadores) {
+    mostrarJugadores(jugadores) {
         console.log("Datos:", jugadores);
 
         // Limpiar el contenedor
