@@ -9,9 +9,9 @@ class Vista {
         this.boton = document.getElementById("boton");
     }
 
-    render(datos) {
-        //muestro los datos en la consola
-        console.log("Datos: " + datos);
+    mostrarJugador(jugador) {
+        //muestro los jugador en la consola
+        console.log("Datos: " + jugador);
 
         //limpiarlo
         this.mostrarJugadores.innerHTML = '';
@@ -19,19 +19,19 @@ class Vista {
         //lista
         const ol = document.createElement('ol');
 
-        for (let i = 0; i < datos.length; i++) {
+        for (let i = 0; i < jugador.length; i++) {
 
             const jugador = document.createElement('li');
 
-            jugador.textContent = datos[i].descripcion;
+            jugador.textContent = jugador[i].descripcion;
 
             ol.appendChild(jugador);
         };
 
         this.mostrarJugadores.appendChild(ol);
 
-        //muestro los datos por pantalla
-        console.log(datos);
+        //muestro los jugador por pantalla
+        console.log(jugador);
     }
 
     clearInputs() {

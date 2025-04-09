@@ -8,8 +8,11 @@ class ModeloJugador {
 
         // Incrementamos el id
         this.id++;
-
+        
         // Almacenamos el jugador en localStorage
-        localStorage.setItem(this.id, JSON.stringify(jugador));
+        localStorage.setItem(this.id + "J", JSON.stringify(jugador));
+
+        // Actualizamos el nuevo id en localStorage
+        localStorage.setItem("ultimoId", this.id);
     }
 }
