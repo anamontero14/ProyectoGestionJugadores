@@ -17,13 +17,13 @@ class Vista {
         // Crear lista ordenada
         const ol = document.createElement('ol');
 
-        for (let i = 0; i < jugadores.length; i++) {
+        for (let i = jugadores.length - 1; i > 0 ; i--) {
             const jugadorItem = document.createElement('li');
 
             // Mostrar información relevante del jugador
             jugadorItem.textContent = `
                 Nombre: ${jugadores[i].nombre}, 
-                Edad: ${this.calcularEdad(jugadores[i].añoNacimiento)}, 
+                Edad: ${jugadores[i].añoNacimiento}, 
                 Posición: ${jugadores[i].posicion}
             `;
 
@@ -33,10 +33,10 @@ class Vista {
         this.divMostrarJugadores.appendChild(ol);
     }
 
-    calcularEdad(añoNacimiento) {
+    /*calcularEdad(añoNacimiento) {
         const añoActual = new Date().getFullYear();
         return añoActual - new Date(añoNacimiento).getFullYear();
-    }
+    }*/
 
     clearInputs() {
         document.getElementById("nombreJugador").value = "";
