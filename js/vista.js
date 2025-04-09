@@ -8,7 +8,7 @@ class Vista {
     }
 
     mostrarJugadores(jugadores) {
-        
+
         console.log("Datos:", jugadores);
 
         // Limpiar el contenedor
@@ -17,7 +17,7 @@ class Vista {
         // Crear lista ordenada
         const ol = document.createElement('ol');
 
-        for (let i = jugadores.length; i > 0 ; i--) {
+        for (let i = 0; i < jugadores.length; i++) {
             const jugadorItem = document.createElement('li');
 
             // Mostrar información relevante del jugador
@@ -33,7 +33,8 @@ class Vista {
         this.divMostrarJugadores.appendChild(ol);
     }
 
-    /*calcularEdad(añoNacimiento) {
+    /*
+    calcularEdad(añoNacimiento) {
         const añoActual = new Date().getFullYear();
         return añoActual - new Date(añoNacimiento).getFullYear();
     }*/
