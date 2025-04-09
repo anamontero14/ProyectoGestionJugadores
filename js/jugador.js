@@ -17,8 +17,4 @@ class Jugador {
         this.equipo = null;
     }
 
-    //setEquipo(equipo) {
-        //if ()
-    //}
-
 }

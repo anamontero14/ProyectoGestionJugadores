@@ -1,7 +1,7 @@
 class ModeloJugador {
     
     constructor() {
-        
+
         if (!localStorage.getItem("J")) {
             localStorage.setItem("J", JSON.stringify([]));
         }
@@ -9,14 +9,23 @@ class ModeloJugador {
 
     agregarJugador(jugador) {
 
-        // Obtener el array de jugadores desde localStorage
+        // Obtenemos el array de jugadores desde localStorage
         let jugadores = JSON.parse(localStorage.getItem('J'));
 
-        // Añadir el nuevo jugador
+        // Añadimos el nuevo jugador
         jugadores.push(jugador);
 
-        // Guardar de nuevo en localStorage
+        // Guardamos de nuevo en localStorage
         localStorage.setItem('J', JSON.stringify(jugadores));
+    }
+
+    eliminarJugador(pos) {
+
+        // Obtenemos el array de jugadores desde localStorage
+        let jugadores = JSON.parse(localStorage.getItem('J'));
+
+        // Eliminamos del array el objeto que se ha clickado
+        jugadores.splice(pos, 1);
     }
 
     obtenerJugadores() {
