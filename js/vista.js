@@ -23,7 +23,7 @@ class Vista {
             // Mostrar información relevante del jugador
             jugadorItem.textContent = `
                 Nombre: ${jugadores[i].nombre}, 
-                Edad: ${jugadores[i].añoNacimiento}, 
+                Fecha de nacimiento: ${jugadores[i].añoNacimiento}, 
                 Posición: ${jugadores[i].posicion}
             `;
 
@@ -39,6 +39,7 @@ class Vista {
         return añoActual - new Date(añoNacimiento).getFullYear();
     }*/
 
+    //Se encarga de limpiar los inputs cada vez que se pulsa el botón de enviar
     clearInputs() {
         document.getElementById("nombreJugador").value = "";
         document.getElementById("añoNacimientoJugador").value = "";
