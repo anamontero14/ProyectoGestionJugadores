@@ -9,12 +9,19 @@ class Controlador {
 
     bindEvents() {
         $("#botonAgregarJugadores").click(() => {
+
+            // Añade el jugador
             this.añadeJugador();
 
-            let jugadores = this.modeloJugador.obtenerJugadores();
-
-            this.vista.mostrarJugadores(jugadores);
+            // La vista renderiza los jugadores
+            this.mostrarJugadores();
+            
         });
+
+        $("#datos").on("click", "eliminar", function() {
+            
+        });
+
     }
 
     añadeJugador() {
@@ -26,5 +33,10 @@ class Controlador {
         let jugador = new Jugador(nombreJugador, posicionJugador, añoNacimientoJugador);
 
         this.modeloJugador.agregarJugador(jugador);
+    }
+
+    mostrarJugadores() {
+        let jugadores = this.modeloJugador.obtenerJugadores();
+        this.vista.mostrarJugadores(jugadores);
     }
 }
