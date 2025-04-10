@@ -52,22 +52,44 @@
             </fieldset>
         </form>
 
-        <!-- Tabla donde aparezcan los datos de los jugadores -->
-        <table border="1">
-
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Fecha de nacimiento</th>
-                    <th>Posicion</th>
-                </tr>
-            </thead>
-
-            <tbody id="cuerpoTabla">
-
-            </tbody>
-
-        </table>
+        <div class="container mt-4">
+            <h2>LISTA DE JUGADORES</h2>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nro</th>
+                        <th>Nombre</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Posición</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <!-- Ejemplo de filas (los datos reales vendrían de tu base de datos) -->
+                    <tr>
+                        <td>1</td>
+                        <td>Lionel Messi</td>
+                        <td>24/06/1987</td>
+                        <td>Delantero</td>
+                        <td><button class="btn btn-sm btn-warning">Modificar</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cristiano Ronaldo</td>
+                        <td>05/02/1985</td>
+                        <td>Delantero</td>
+                        <td><button class="btn btn-sm btn-warning">Modificar</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Neymar Jr</td>
+                        <td>05/02/1992</td>
+                        <td>Delantero</td>
+                        <td><button class="btn btn-sm btn-warning">Modificar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- jQuery y tus scripts -->
