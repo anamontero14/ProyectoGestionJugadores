@@ -19,9 +19,10 @@ class Vista {
             //creo las variables que almacenan los datos de las tablas
             //const fila = document.createElement('tr');
 
-            let tdNombre = $("#nombre").val();
-            let tdFechaNacimiento = $("#nombre").val();
-            const tdPosicion = document.createElement('td');
+            
+            let tdNombre = jugadores[i].nombre;
+            let tdFechaNacimiento = jugadores[i].añoNacimiento;
+            let tdPosicion = jugadores[i].posicion;
 
             const fila = "<tr>" +
                 "<td>" + tdNombre + "</td>" + "<td>" + tdFechaNacimiento + "</td>"
