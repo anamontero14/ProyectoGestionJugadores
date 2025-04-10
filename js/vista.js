@@ -18,7 +18,7 @@ class Vista {
 
             //creo las variables que almacenan los datos de las tablas
             //const fila = document.createElement('tr');
-            console.log(i);
+
             let tdNro = i;
             let tdNombre = jugadores[i].nombre;
             let tdFechaNacimiento = jugadores[i].añoNacimiento;
