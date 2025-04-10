@@ -18,15 +18,17 @@ class Vista {
 
             //creo las variables que almacenan los datos de las tablas
             //const fila = document.createElement('tr');
-
-            
+            console.log(i);
+            let tdNro = i;
             let tdNombre = jugadores[i].nombre;
             let tdFechaNacimiento = jugadores[i].añoNacimiento;
             let tdPosicion = jugadores[i].posicion;
 
             const fila = "<tr>" +
-                "<td>" + tdNombre + "</td>" + "<td>" + tdFechaNacimiento + "</td>"
-                + "<td>" + tdPosicion + "</td>" +
+                "<td>" + tdNro + "</td>" + 
+                "<td>" + tdNombre + "</td>" + 
+                "<td>" + tdFechaNacimiento + "</td>" +
+                "<td>" + tdPosicion + "</td>" +
                 "</tr>";
 
             $("#cuerpoTabla").append(fila);
