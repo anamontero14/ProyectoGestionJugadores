@@ -66,9 +66,9 @@ class Vista {
             //const fila = document.createElement('tr');
 
             let tdId = i + 1;
-            let tdNombre = equipos[i].nombreEquipo;
-            let tdCiudad = equipos[i].ciudadEquipo;
-            let tdEstadio = equipos[i].estadioEquipo;
+            let tdNombre = equipos[i].nombre;
+            let tdCiudad = equipos[i].ciudad;
+            let tdEstadio = equipos[i].estadio;
 
             const fila = "<tr>" +
                 "<td>" + tdId + "</td>" +
