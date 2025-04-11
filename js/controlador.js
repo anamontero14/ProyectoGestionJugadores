@@ -82,10 +82,10 @@ class Controlador {
     añadeEquipo() {
 
         let nombreEquipo = $("#nombreEquipo").val();
-        let ciudad = $("#ciudad").val();
-        let estadio = $("#estadio").val();
+        let ciudadEquipo = $("#ciudadEquipo").val();
+        let estadioEquipo = $("#estadioEquipo").val();
 
-        let equipo = new Equipo(nombreEquipo, ciudad, estadio);
+        let equipo = new Equipo(nombreEquipo, ciudadEquipo, estadioEquipo);
 
         this.modeloEquipo.agregarEquipo(equipo);
     }
