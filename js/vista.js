@@ -7,7 +7,7 @@ class Vista {
         this.boton = document.getElementById("boton");
     }
 
-    mostrarJugadores(jugadores) {
+    renderJugadores(jugadores) {
 
         console.log("Datos:", jugadores);
 
@@ -19,17 +19,25 @@ class Vista {
             //creo las variables que almacenan los datos de las tablas
             //const fila = document.createElement('tr');
 
-            let tdNro = i;
+            let numID;
+
+            if (i = 0) {
+                numID = 1;
+            } else {
+                numID = i;
+            }
+
+            let tdId = numID;
             let tdNombre = jugadores[i].nombre;
             let tdFechaNacimiento = jugadores[i].añoNacimiento;
             let tdPosicion = jugadores[i].posicion;
 
             const fila = "<tr>" +
-                "<td>" + tdNro + "</td>" + 
-                "<td>" + tdNombre + "</td>" + 
+                "<td>" + tdId + "</td>" +
+                "<td>" + tdNombre + "</td>" +
                 "<td>" + tdFechaNacimiento + "</td>" +
                 "<td>" + tdPosicion + "</td>" +
-                "</tr>";
+                "<td>" + "<button type='button' id='" + i + "'>Eliminar</button>" + "</td>" + "</tr>";
 
             $("#cuerpoTabla").append(fila);
         }
