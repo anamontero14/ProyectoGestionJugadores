@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-12 text-end">
-                    <button type="button" id="boton" class="btn btn-primary">Agregar Equipo</button>
+                    <button type="button" id="botonAgregarEquipos" class="btn btn-primary">Agregar Equipo</button>
                 </div>
             </fieldset>
         </form>
@@ -45,14 +45,14 @@
             <table class="table table-bordered">
                 <thead class="table-light">
                     <tr>
-                        <th>Nro</th>
+                        <th>ID</th>
                         <th>Nombre</th>
-                        <th>Fecha de nacimiento</th>
-                        <th>Posición</th>
+                        <th>Ciudad</th>
+                        <th>Estadio</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody id="cuerpoTabla">
+                <tbody id="cuerpoTablaEquipos">
                     <!-- Ejemplo de filas (los datos reales vendrían de tu base de datos) -->
 
                 </tbody>
@@ -62,8 +62,8 @@
 
     <!-- jQuery y scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/jugador.js"></script>
-    <script src="js/modeloJugador.js"></script>
+    <script src="js/equipo.js"></script>
+    <script src="js/modeloEquipo.js"></script>
     <script src="js/vista.js"></script>
     <script src="js/controlador.js"></script>
     <script>
