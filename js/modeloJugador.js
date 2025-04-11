@@ -26,6 +26,9 @@ class ModeloJugador {
 
         // Eliminamos del array el objeto que se ha clickado
         jugadores.splice(pos, 1);
+
+        // Guardamos de nuevo en localStorage
+        localStorage.setItem('J', JSON.stringify(jugadores));
     }
 
     obtenerJugadores() {

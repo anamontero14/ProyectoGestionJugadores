@@ -14,12 +14,17 @@ class Controlador {
             this.añadeJugador();
 
             // La vista renderiza los jugadores
-            this.mostrarJugadores();
+            this.renderJ();
             
         });
 
-        $("#datos").on("click", "eliminar", function() {
+        $("#cuerpoTabla").on("click", "button", function() {
             
+            // Obtenemos el id del boton que se ha clickado (posicion en el array del jugador)
+            let pos = $(this).attr('id');
+
+            // Eliminamos el jugador
+            this.modeloJugador.eliminarJugador(pos);
         });
 
     }
@@ -35,8 +40,8 @@ class Controlador {
         this.modeloJugador.agregarJugador(jugador);
     }
 
-    mostrarJugadores() {
+    renderJ() {
         let jugadores = this.modeloJugador.obtenerJugadores();
-        this.vista.mostrarJugadores(jugadores);
+        this.vista.renderJugadores(jugadores);
     }
 }
