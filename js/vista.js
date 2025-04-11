@@ -6,7 +6,7 @@ class Vista {
         // Botón
         this.boton = document.getElementById("boton");
     }
-
+    
     renderJugadores(jugadores) {
 
         console.log("Datos:", jugadores);
