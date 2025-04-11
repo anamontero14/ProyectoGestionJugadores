@@ -10,7 +10,7 @@ class ModeloJugador {
     agregarJugador(jugador) {
 
         // Obtenemos el array de jugadores desde localStorage
-        let jugadores = JSON.parse(localStorage.getItem('J'));
+        let jugadores = this.obtenerJugadores();
 
         // Añadimos el nuevo jugador
         jugadores.push(jugador);
@@ -22,7 +22,7 @@ class ModeloJugador {
     eliminarJugador(pos) {
 
         // Obtenemos el array de jugadores desde localStorage
-        let jugadores = JSON.parse(localStorage.getItem('J'));
+        let jugadores = this.obtenerJugadores();
 
         // Eliminamos del array el objeto que se ha clickado
         jugadores.splice(pos, 1);
