@@ -35,22 +35,35 @@
                 </div>
 
                 <div class="col-12 text-end">
-                    <button type="button" id="boton" class="btn btn-primary">Agregar Equipo</button>
+                    <button type="button" id="botonAgregarEquipos" class="btn btn-primary">Agregar Equipo</button>
                 </div>
             </fieldset>
         </form>
 
-        <!-- Sección para mostrar equipos añadidos -->
-        <div id="mostrarEquiposAñadidos" class="bg-white p-4 rounded shadow-sm">
-            <h4 class="mb-4">Lista de Equipos Añadidos</h4>
-            <!-- Aquí se insertarán los equipos -->
+        <div class="container mt-4">
+            <h2>LISTA DE EQUIPOS</h2>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Ciudad</th>
+                        <th>Estadio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaEquipos">
+                    <!-- Ejemplo de filas (los datos reales vendrían de tu base de datos) -->
+
+                </tbody>
+            </table>
         </div>
     </div>
 
     <!-- jQuery y scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/jugador.js"></script>
-    <script src="js/modeloJugador.js"></script>
+    <script src="js/equipo.js"></script>
+    <script src="js/modeloEquipo.js"></script>
     <script src="js/vista.js"></script>
     <script src="js/controlador.js"></script>
     <script>
