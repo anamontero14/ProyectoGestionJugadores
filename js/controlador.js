@@ -18,14 +18,18 @@ class Controlador {
             
         });
 
-        $("#cuerpoTabla").on("click", "button", function() {
+        $("#cuerpoTabla").on("click", "button", (event) => {
             
-            // Obtenemos el id del boton que se ha clickado (posicion en el array del jugador)
-            let pos = $(this).attr('id');
-
+            // Obtenemos el id del botón clickeado
+            let pos = $(event.target).attr('id');
+        
             // Eliminamos el jugador
             this.modeloJugador.eliminarJugador(pos);
+        
+            // Volvemos a renderizar la tabla actualizada
+            this.renderJ();
         });
+        
 
     }
 
