@@ -1,5 +1,5 @@
 class Controlador {
-    
+
     constructor() {
         this.vista = new Vista();
         this.modeloJugador = new ModeloJugador();
@@ -10,6 +10,9 @@ class Controlador {
 
     bindEvents() {
 
+        // La vista renderiza los jugadores
+        this.renderJ();
+
         // Agregar jugador
         $("#botonAgregarJugadores").click(() => {
 
@@ -19,6 +22,9 @@ class Controlador {
             // La vista renderiza los jugadores
             this.renderJ();
         });
+
+        // La vista renderiza los equipos
+        this.renderE();
 
         // Agregar equipo
         $("#botonAgregarEquipos").click(() => {
@@ -36,7 +42,7 @@ class Controlador {
 
             // Obtenemos el id del botón clickeado
             let pos = $(event.target).attr('id');
-        
+
             // Eliminamos el jugador
             this.eliminarJugador(pos);
         });
@@ -46,7 +52,7 @@ class Controlador {
 
             // Obtenemos el id del botón clickeado
             let pos = $(event.target).attr('id');
-        
+
             // Eliminamos el equipo
             this.eliminarEquipo(pos);
         });
@@ -68,7 +74,7 @@ class Controlador {
 
         // Eliminamos el jugador
         this.modeloJugador.eliminarJugador(pos);
-        
+
         // Volvemos a renderizar la tabla actualizada
         this.renderJ();
     }
@@ -94,7 +100,7 @@ class Controlador {
 
         // Eliminamos el equipo
         this.modeloEquipo.eliminarEquipo(pos);
-        
+
         // Volvemos a renderizar la tabla actualizada
         this.renderE();
     }
@@ -105,5 +111,5 @@ class Controlador {
     }
 
 
-    
+
 }

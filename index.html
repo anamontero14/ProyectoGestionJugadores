@@ -1,73 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Jugadores</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Fútbol - Menú Principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .curved-image-section {
+            height: 350px;
+            /* Alto de la sección */
+            background-image: url('ruta/a/tu-imagen.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+        }
+
+        body {
+            background-color: #000000;
+            color: #00ff00;
+        }
+
+        h1,
+        .card-title {
+            color: #00ff00;
+        }
+
+        .card {
+            height: 100%;
+            border: 2px solid #00ff00;
+            background-color: #111;
+            color: #00ff00;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 255, 0, 0.4);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        a.text-decoration-none.text-dark {
+            color: #00ff00 !important;
+        }
+
+        .lead.text-muted {
+            color: #00ff00 !important;
+        }
+
+        .header-img {
+            height: 350px;
+            background-image: url('https://img.freepik.com/foto-gratis/estadio-futbol-lleno-gente_23-2151548526.jpg?t=st=1745254742~exp=1745258342~hmac=d60bb878b20de317e43e468408e14958a952543a091fd3e26878c84378ad0d78&w=1380');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .icono-borde {
+            position: absolute;
+            top: -20px;
+            /* hacia arriba */
+            right: -20px;
+            /* hacia la derecha */
+            width: 50px;
+            /* o el tamaño que necesites */
+            height: auto;
+            z-index: 10;
+        }
+    </style>
 </head>
-<body class="bg-light">
+
+<body>
+
+    <div class="header-img"></div>
 
     <div class="container py-5">
-        <div class="text-center mb-4">
-            <h1 class="display-6 fw-bold">Gestión de jugadores</h1>
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Menú Principal</h1>
+            <p class="lead">Bienvenido a la aplicación de gestión de fútbol</p>
         </div>
 
-        <form class="bg-white p-4 rounded shadow-sm">
-            <fieldset class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label">Nombre</label>
-                    <input type="text" id="nombreJugador" class="form-control" placeholder="Escribe el nombre del jugador">
-                </div>
+        <div class="row g-4">
+            <!-- Agregar Jugadores -->
+            <div class="col-md-6 col-lg-3">
+                <a href="./agregarJugadores.html" class="text-decoration-none text-dark">
+                    <div class="card text-center shadow-sm">
+                        <img src="./img/futbol-americano.png" class="icono-borde">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Agregar Jugadores</h5>
+                            <p class="card-text">Registrar nuevos jugadores en la base de datos.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Año de nacimiento</label>
-                    <input type="date" id="añoNacimientoJugador" value="1000-01-01" class="form-control">
-                </div>
+            <!-- Agregar Equipos -->
+            <div class="col-md-6 col-lg-3">
+                <a href="./agregarEquipos.html" class="text-decoration-none text-dark">
+                    <div class="card text-center shadow-sm">
+                        <img src="./img/futbol-americano.png" class="icono-borde">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Agregar Equipos</h5>
+                            <p class="card-text">Crear nuevos equipos para competir.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-                <div class="col-md-12">
-                    <label class="form-label">Posición</label>
-                    <select name="posiciones" id="posicionJugador" class="form-select">
-                        <option selected>Selecciona posición</option>
-                        <option value="POR">POR</option>
-                        <option value="DFC">DFC</option>
-                        <option value="LI">LI</option>
-                        <option value="LD">LD</option>
-                        <option value="MCD">MCD</option>
-                        <option value="MCO">MCO</option>
-                        <option value="MC">MC</option>
-                        <option value="ED">ED</option>
-                        <option value="EI">EI</option>
-                        <option value="DC">DC</option>
-                    </select>
-                </div>
+            <!-- Asociar Jugadores a Equipos -->
+            <div class="col-md-6 col-lg-3">
+                <a href="./asignarJugadores.html" class="text-decoration-none text-dark">
+                    <div class="card text-center shadow-sm">
+                        <img src="./img/futbol-americano.png" class="icono-borde">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Asignar Jugadores</h5>
+                            <p class="card-text">Agregar jugadores a los equipos existentes.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-                <div class="col-12 text-end">
-                    <button type="button" id="boton" class="btn btn-primary">Agregar jugador</button>
-                </div>
-            </fieldset>
-        </form>
-
-        <br>
-
-        <div id="mostrarJugadoresAñadidos" class="mt-4">
-            <!-- Aquí se mostrarán los jugadores añadidos -->
+            <!-- Ver Estadísticas -->
+            <div class="col-md-6 col-lg-3">
+                <a href="./mostrarEstadisticas.html" class="text-decoration-none text-dark">
+                    <div class="card text-center shadow-sm">
+                        <img src="./img/futbol-americano.png" class="icono-borde">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Estadísticas</h5>
+                            <p class="card-text">Consultar estadísticas individuales de los jugadores.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- jQuery y scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/jugador.js"></script>
+    <script src="js/equipo.js"></script>
+    <script src="js/modeloEquipo.js"></script>
     <script src="js/modeloJugador.js"></script>
     <script src="js/vista.js"></script>
     <script src="js/controlador.js"></script>
     <script>
-        //inicializar la aplicación
+        // Inicializar la aplicación
         const controlador = new Controlador();
     </script>
 
-    <!-- Bootstrap JS (opcional si no usas componentes interactivos de Bootstrap) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

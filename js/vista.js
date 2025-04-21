@@ -45,7 +45,8 @@ class Vista {
                 "<td>" + tdNombre + "</td>" +
                 "<td>" + tdFechaNacimiento + "</td>" +
                 "<td>" + tdPosicion + "</td>" +
-                "<td>" + "<button type='button' id='" + i + "'>Eliminar</button>" + "</td>" + "</tr>";
+                "<td>" + "<button type='button' id='" + i + "'>Modificar</button>" + " "
+                + "<button type='button' id='" + i + "'>Eliminar</button>" + "</td>" + "</tr>";
 
             $("#cuerpoTablaJugadores").append(fila);
         }
@@ -75,9 +76,32 @@ class Vista {
                 "<td>" + tdNombre + "</td>" +
                 "<td>" + tdCiudad + "</td>" +
                 "<td>" + tdEstadio + "</td>" +
-                "<td>" + "<button type='button' id='" + i + "'>Eliminar</button>" + "</td>" + "</tr>";
+                "<td>" + "<button type='button' id='" + i + "'>Modificar</button>" + " " +
+                "<button type='button' id='" + i + "'>Eliminar</button>" + "</td>" + "</tr>";
 
             $("#cuerpoTablaEquipos").append(fila);
+        }
+
+    }
+
+    renderAsignarJugadorEquipo(jugadores, equipos) {
+
+        for (let i = 0; i < jugadores.length; i++) {
+            //recojo el nombre del jugador
+            let nombreJugador = jugadores[i].nombre;
+            //creo la opcion
+            const opcionJugador = "<option value='" + i + "'>" + nombreJugador + "</option"
+            //la meto
+            $("#selectJugadores").append(opcionJugador);
+        }
+
+        for (let i = 0; i < equipos.length; i++) {
+            //recojo el nombre del equipo
+            let nombreEquipo = equipos[i].nombre;
+            //creo la opcion
+            const opcionEquipo = "<option value='" + i + "'>" + nombreEquipo + "</option"
+            //la meto
+            $("#selectEquipo").append(opcionEquipo);
         }
 
     }
