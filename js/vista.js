@@ -137,12 +137,7 @@ class Vista {
     }
 
     renderMostrarJugadoresPorEquipo(jugadores, equipos) {
-<<<<<<< HEAD
-    
-=======
-        console.log("entro vista");
-
->>>>>>> 6e524baf74600646c5779b3d04a92f620c3492ff
+        
         // Limpiar el contenedor antes de añadir la nueva tabla
         $("#resultadoEstadisticas").empty();
 
