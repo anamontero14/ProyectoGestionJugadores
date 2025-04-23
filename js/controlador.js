@@ -65,13 +65,16 @@ class Controlador {
         });
 
         // Mostrar estadisticas
-        $("#mostrarStats").on("click", "button", (event) => {
+        $("#mostrarStats").click(() => {
 
             // Obtenemos el valor de la opcion seleccionada
-            let valor = $("#mostrarStats").val();
+            let valor = $("#selectorEstadisticas").val();
+
+            console.log(valor);
 
             // Si es el valor 1
             if (valor == 3) {
+                console.log(valor);
                 this.plantillaEquipos();
             }
         });
@@ -99,7 +102,7 @@ class Controlador {
             creaJugador = false;
         }
 
-        if (creaJuagdor) {
+        if (creaJugador) {
             let jugador = new Jugador(nombreJugador, posicionJugador, añoNacimientoJugador);
             this.modeloJugador.agregarJugador(jugador);
         }
@@ -179,9 +182,10 @@ class Controlador {
     }
 
     plantillaEquipos() {
-        let jugadores = this.modeloEquipo.obtenerJugadores();
+        console.log("entro");
+        let jugadores = this.modeloJugador.obtenerJugadores();
         let equipos = this.modeloEquipo.obtenerEquipos();
-        this.vista.renderMo
+        this.vista.renderMostrarJugadoresPorEquipo(jugadores, equipos);
     }
 
    

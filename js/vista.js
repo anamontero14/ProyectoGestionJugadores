@@ -137,38 +137,46 @@ class Vista {
     }
 
     renderMostrarJugadoresPorEquipo(jugadores, equipos) {
-
-        //variable donde se guardará el numero
-        let numEquipo;
-
-        //recorro los equipos
+        console.log("entro vista");
+    
+        // Limpiar el contenedor antes de añadir la nueva tabla
+        $("#resultadoEstadisticas").empty();
+    
+        // Crear la tabla
+        let tabla = "<table id='tablaPlantillas' class='table table-bordered'></table>";
+    
+        // Añadir la tabla al contenedor
+        $("#resultadoEstadisticas").append(tabla);
+    
+        // Recorro los equipos
         for (let i = 0; i < equipos.length; i++) {
-            //objeto de la tabla
-            let tabla = "<table>" + "<th>" + "<td>ID</td>" + "<td>" + equipos[i].nombre
-                + "</td>" + "</th>";
-
-            //recorro los jugadores
+            // Crear la fila con el nombre del equipo
+            let filaEquipo = "<thead><tr><th colspan='2'>" + equipos[i].nombre + "</th></tr></thead>";
+    
+            // Añadir la fila del equipo a la tabla
+            $("#tablaPlantillas").append(filaEquipo);
+    
+            // Recorro los jugadores
+            let jugadoresEquipo = false; // bandera para ver si se añaden jugadores
+    
             for (let j = 0; j < jugadores.length; j++) {
-                //asigno el numero del equipo a la variable
-                numEquipo = jugadores[j].equipo;
-
-                //si el numero del equipo es igual a la i
-                if (numEquipo = i) {
-                    let fila = "<tr>" + "<td>" + j + "</td>" + "<td>" + jugadores[j].nombre + "</td>" + "</tr>";
-
-                    //le añado eso a la tabla
-                    tabla += fila;
+                // Si el jugador pertenece al equipo
+                if (jugadores[j].equipo === i) {
+                    let filaJugador = "<tr><td>" + jugadores[j].nombre + "</td><td>" + jugadores[j].posicion + "</td></tr>";
+                    $("#tablaPlantillas").append(filaJugador);
+                    jugadoresEquipo = true; // Hay jugadores para este equipo
                 }
             }
-
-            //cerrar la tabla
-            tabla += "</table>";
-
-            //append
-            $("#resultadoEstadisticas").append(tabla);
+    
+            // Si no hay jugadores para un equipo, agregar una fila vacía
+            if (!jugadoresEquipo) {
+                let filaSinJugadores = "<tr><td colspan='2'>No hay jugadores en este equipo</td></tr>";
+                $("#tablaPlantillas").append(filaSinJugadores);
+            }
         }
-
     }
+    
+    
 
     //Se encarga de limpiar los inputs cada vez que se pulsa el botón de enviar
     clearInputs() {
