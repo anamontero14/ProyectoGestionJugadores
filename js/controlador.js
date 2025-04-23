@@ -78,7 +78,7 @@ class Controlador {
             } else if (valor == 3) {
                 this.plantillaEquipos();
             } else {
-                this.renderPromedioEdadJugadores();
+                this.promedioEdadJugadores();
             }
         });
     }
