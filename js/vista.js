@@ -137,12 +137,6 @@ class Vista {
     }
 
     renderMostrarJugadoresPorEquipo(jugadores, equipos) {
-<<<<<<< HEAD
-    
-=======
-        console.log("entro vista");
-
->>>>>>> 6e524baf74600646c5779b3d04a92f620c3492ff
         // Limpiar el contenedor antes de añadir la nueva tabla
         $("#resultadoEstadisticas").empty();
 
@@ -216,6 +210,8 @@ class Vista {
     //promedio de edad de los jugadores
     renderPromedioEdadJugadores(jugadores) {
 
+        console.log("entro");
+
         //almacena el año
         let año;
 
@@ -232,7 +228,7 @@ class Vista {
             //almacena el año
             año = jugadores[i].añoNacimiento;
 
-            console.log(año);
+            console.log("año");
 
             //sumo el año
             suma += año;
