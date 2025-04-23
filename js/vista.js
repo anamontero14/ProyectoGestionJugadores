@@ -215,7 +215,7 @@ class Vista {
     //promedio de edad de los jugadores
     renderPromedioEdadJugadores(jugadores) {
 
-        
+
 
     }
 
