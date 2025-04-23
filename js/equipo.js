@@ -13,6 +13,7 @@ class Equipo {
         if (estadio != null && estadio != "") {
             this.estadio = estadio;
         }
+
     }
 
 }

@@ -56,6 +56,21 @@ class Controlador {
             // Eliminamos el equipo
             this.eliminarEquipo(pos);
         });
+
+        // Asignar jugador a equipo
+        $("#btnAsignar").click(() => {
+
+            // Obtenemos el valor del select de los jugadores (ID Jugador)
+            let idJugador = $("#selectJugador").val();
+
+            // Obtenemos el nombre del select de los equipos (Nombre Equipo)
+            let idEquipo = $("#selectEquipo").val();
+
+            // Asignamos el equipo al jugador
+            this.modeloJugador.asignarEquipoToJugador(idJugador, idEquipo);
+
+            console.log(this.modeloJugador.obtenerJugadores());
+        });
     }
 
 
@@ -82,6 +97,13 @@ class Controlador {
     renderJ() {
         let jugadores = this.modeloJugador.obtenerJugadores();
         this.vista.renderJugadores(jugadores);
+        this.vista.renderSelectJugadores(jugadores);
+    }
+
+    renderE() {
+        let equipos = this.modeloEquipo.obtenerEquipos();
+        this.vista.renderEquipos(equipos);
+        this.vista.renderSelectEquipos(equipos);
     }
 
 
@@ -105,10 +127,12 @@ class Controlador {
         this.renderE();
     }
 
-    renderE() {
-        let equipos = this.modeloEquipo.obtenerEquipos();
-        this.vista.renderEquipos(equipos);
+    asignarEquipoJugador() {
+
+        
     }
+
+   
 
 
 

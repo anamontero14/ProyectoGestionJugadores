@@ -36,4 +36,22 @@ class ModeloJugador {
         // Devolver el array de jugadores
         return JSON.parse(localStorage.getItem('J'));
     }
+
+    asignarEquipoToJugador(idJugador, idEquipo) {
+
+        // Obtenemos el array de jugadores desde localStorage
+        let jugadores = this.obtenerJugadores();
+
+        // Comprobamos que el jugador exista
+        if (jugadores[idJugador] != undefined) {
+
+            // Modificamos el atributo equipo del jugador
+            jugadores[idJugador].equipo = idEquipo;
+        }
+
+        // Guardamos de nuevo en localStorage
+        localStorage.setItem('J', JSON.stringify(jugadores))
+    }
+
+
 }

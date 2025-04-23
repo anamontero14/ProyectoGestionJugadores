@@ -106,6 +106,58 @@ class Vista {
 
     }
 
+    // funcion para renderizar el select de los equipos
+    renderSelectEquipos(equipos) {
+
+        // limpiar el select
+        $("#selectEquipo").empty();
+
+        // recorro el array equipos
+        for (let i in equipos) {
+
+            // obtengo el equipo
+            let equipo = equipos[i];
+
+            // obtengo el nombre del equipo
+            let nombre = equipo.nombre;
+
+            // obtengo el id del equipo
+            let id = equipo.id;
+
+            // creo la opcion para el select
+            let opcion = "<option value='" + i + "'>" + nombre + "</option>";
+
+            // añado la opcion al select
+            $("#selectEquipo").append(opcion);
+        }
+    }
+
+        // funcion para renderizar el select de los jugadores
+        renderSelectJugadores(jugadores) {
+
+            // limpiar el select
+            $("#selectJugador").empty();
+    
+            // recorro el array jugadores
+            for (let i in jugadores) {
+    
+                // obtengo el jugador
+                let jugador = jugadores[i];
+    
+                // obtengo el nombre del jugador
+                let nombre = jugador.nombre;
+    
+                // obtengo el id del jugador
+                let id = jugador.id;
+    
+                // creo la opcion para el select
+                let opcion = "<option value='" + i + "'>" + nombre + "</option>";
+    
+                // añado la opcion al select
+                $("#selectJugador").append(opcion);
+            }
+        }
+
     /*
     calcularEdad(añoNacimiento) {
         const añoActual = new Date().getFullYear();

@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<style>
+    #mostrarStats {
+        width: 50%;
+        height: 30px;
+        margin-top: 20px;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +28,16 @@
                 <h5 class="card-title mb-3">Selecciona una estadística</h5>
                 <select id="selectorEstadisticas" class="form-select">
                     <option selected disabled>Elige una opción</option>
-                    <option value="totalJugadores">Total de jugadores registrados</option>
-                    <option value="totalEquipos">Total de equipos registrados</option>
-                    <option value="jugadoresPorEquipo">Jugadores por equipo</option>
-                    <option value="promedioEdad">Promedio de edad de jugadores</option>
-                    <!-- Puedes añadir más opciones según las estadísticas que manejes -->
+                    <option value="1">Total de jugadores registrados</option>
+                    <option value="2">Total de equipos registrados</option>
+                    <option value="3">Jugadores por equipo</option>
+                    <option value="4">Promedio de edad de jugadores</option>
                 </select>
             </div>
+        </div>
+
+        <div class="text-center mb-4">
+            <button id="mostrarStats">Mostrar</button>
         </div>
 
         <!-- Sección donde se mostrarán los resultados -->
