@@ -7,140 +7,132 @@
     <title>Gestión de Fútbol - Menú Principal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
-        .curved-image-section {
-            height: 350px;
-            /* Alto de la sección */
-            background-image: url('ruta/a/tu-imagen.jpg');
-            background-size: cover;
-            background-position: center;
-            border-bottom-left-radius: 50% 20%;
-            border-bottom-right-radius: 50% 20%;
-        }
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-        body {
-            padding-top: 70px; /* espacio para el navbar */
-            background-color: #000000;
-            color: #00ff00;
-        }
 
-        h1,
-        .card-title {
-            color: #00ff00;
-        }
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Evitar el scroll */
+    padding: 10px;
+}
 
-        .card {
-            height: 100%;
-            border: 2px solid #00ff00;
-            background-color: #111;
-            color: #00ff00;
-            transition: all 0.3s ease;
-        }
 
-        .card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0, 255, 0, 0.4);
-        }
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    grid-template-rows: repeat(2, 1fr); /* Dos filas de igual tamaño */
+    height: 100%; /* Ocupa toda la altura disponible */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    gap: 10px; /* Espacio entre los botones */
+    box-sizing: border-box;
+    padding-top: 10px;
+}
 
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-        }
+.dashboard-tile {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    padding: 2rem; /* Aumenta el tamaño del padding para hacer el botón más grande */
+    border-radius: 8px; /* Bordes redondeados */
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; /* Asegura que los botones ocupen toda la altura de su celda */
+}
 
-        a.text-decoration-none.text-dark {
-            color: #00ff00 !important;
-        }
+.dashboard-tile:hover {
+    background-color: #e0f9f4;
+    box-shadow: inset 0 0 0 4px #00c48c;
+    z-index: 1;
+}
 
-        .lead.text-muted {
-            color: #00ff00 !important;
-        }
+.tile-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .header-img {
-            height: 350px;
-            background-image: url('https://img.freepik.com/foto-gratis/estadio-futbol-lleno-gente_23-2151548526.jpg?t=st=1745254742~exp=1745258342~hmac=d60bb878b20de317e43e468408e14958a952543a091fd3e26878c84378ad0d78&w=1380');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
+.tile-content h5 {
+    color: #00a37a;
+    margin-top: 1rem;
+    font-size: 1.8rem; /* Tamaño grande para el título */
+    font-weight: 700;
+    line-height: 1.3;
+}
 
-        .icono-borde {
-            position: absolute;
-            top: -20px;
-            /* hacia arriba */
-            right: -20px;
-            /* hacia la derecha */
-            width: 50px;
-            /* o el tamaño que necesites */
-            height: auto;
-            z-index: 10;
-        }
+.tile-content p {
+    color: #555;
+    font-size: 1.2rem; /* Tamaño grande para la descripción */
+}
+
+.icono-borde {
+    width: 70px; /* Tamaño de íconos más grande */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#menuInicio{
+    border-radius: 8px;
+}
+
     </style>
 </head>
 
 <body>
 
-    <div class="header-img"></div>
+    <div id = "menuInicio" class="text-center py-4 shadow-sm" style="background-color: #ffffff; border-bottom: 2px solid #00c48c;">
+        <h1 style="margin: 0; font-weight: 700; font-size: 2.5rem; color: #00c48c;">
+            ⚽ Foot Manager ⚽
+        </h1>
+        <p style="margin: 0; color: #666; font-size: 1rem;">
+            ¡Gestiona tus propios campeonatos!
+        </p>
+    </div>
 
-    <div class="container py-5">
-        <div class="text-center mb-5">
-            <h1 class="display-4 fw-bold">Menú Principal</h1>
-            <p class="lead">Bienvenido a la aplicación de gestión de fútbol</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Agregar Jugadores -->
-            <div class="col-md-6 col-lg-3">
-                <a href="./agregarJugadores.html" class="text-decoration-none text-dark">
-                    <div class="card text-center shadow-sm">
-                        <img src="./img/futbol-americano.png" class="icono-borde">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Agregar Jugadores</h5>
-                            <p class="card-text">Registrar nuevos jugadores en la base de datos.</p>
-                        </div>
-                    </div>
-                </a>
+    <div class="dashboard-grid">
+        <a href="./agregarJugadores.html" class="dashboard-tile">
+            <div class="tile-content">
+                <img src="./img/futbol-americano.png" class="icono-borde">
+                <h5>Agregar Jugadores</h5>
+                <p>Registrar nuevos jugadores en la base de datos</p>
             </div>
-
-            <!-- Agregar Equipos -->
-            <div class="col-md-6 col-lg-3">
-                <a href="./agregarEquipos.html" class="text-decoration-none text-dark">
-                    <div class="card text-center shadow-sm">
-                        <img src="./img/futbol-americano.png" class="icono-borde">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Agregar Equipos</h5>
-                            <p class="card-text">Crear nuevos equipos para competir.</p>
-                        </div>
-                    </div>
-                </a>
+        </a>
+        <a href="./agregarEquipos.html" class="dashboard-tile">
+            <div class="tile-content">
+                <img src="./img/futbol-americano.png" class="icono-borde">
+                <h5>Agregar Equipos</h5>
+                <p>Crear nuevos equipos para competir</p>
             </div>
-
-            <!-- Asociar Jugadores a Equipos -->
-            <div class="col-md-6 col-lg-3">
-                <a href="./asignarJugadores.html" class="text-decoration-none text-dark">
-                    <div class="card text-center shadow-sm">
-                        <img src="./img/futbol-americano.png" class="icono-borde">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Asignar Jugadores</h5>
-                            <p class="card-text">Agregar jugadores a los equipos existentes.</p>
-                        </div>
-                    </div>
-                </a>
+        </a>
+        <a href="./asignarJugadores.html" class="dashboard-tile">
+            <div class="tile-content">
+                <img src="./img/futbol-americano.png" class="icono-borde">
+                <h5>Asignar Jugadores</h5>
+                <p>Agregar jugadores a los equipos existentes</p>
             </div>
-
-            <!-- Ver Estadísticas -->
-            <div class="col-md-6 col-lg-3">
-                <a href="./mostrarEstadisticas.html" class="text-decoration-none text-dark">
-                    <div class="card text-center shadow-sm">
-                        <img src="./img/futbol-americano.png" class="icono-borde">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Estadísticas</h5>
-                            <p class="card-text">Consultar estadísticas individuales de los jugadores.</p>
-                        </div>
-                    </div>
-                </a>
+        </a>
+        <a href="./mostrarEstadisticas.html" class="dashboard-tile">
+            <div class="tile-content">
+                <img src="./img/futbol-americano.png" class="icono-borde">
+                <h5>Estadísticas</h5>
+                <p>Consultar estadísticas individuales de los jugadores</p>
             </div>
-        </div>
+        </a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
