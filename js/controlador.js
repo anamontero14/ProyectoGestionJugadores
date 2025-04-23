@@ -70,12 +70,15 @@ class Controlador {
             // Obtenemos el valor de la opcion seleccionada
             let valor = $("#selectorEstadisticas").val();
 
-            console.log(valor);
-
-            // Si es el valor 1
-            if (valor == 3) {
-                console.log(valor);
+            // Dependiendo de la opcion que seleccione ejecutamos una funcion u otra
+            if (valor == 1) {
+                this.totalJugadoresRegistrados();
+            } else if (valor == 2) {
+                this.totalEquiposRegistrados();
+            } else if (valor == 3) {
                 this.plantillaEquipos();
+            } else {
+                this.renderPromedioEdadJugadores();
             }
         });
     }
@@ -182,10 +185,24 @@ class Controlador {
     }
 
     plantillaEquipos() {
-        console.log("entro");
         let jugadores = this.modeloJugador.obtenerJugadores();
         let equipos = this.modeloEquipo.obtenerEquipos();
         this.vista.renderMostrarJugadoresPorEquipo(jugadores, equipos);
+    }
+
+    totalJugadoresRegistrados() {
+        let jugadores = this.modeloJugador.obtenerJugadores();
+        this.vista.renderMostrarNumJugadoresRegistrados(jugadores);
+    }
+
+    totalEquiposRegistrados() {
+        let equipos = this.modeloEquipo.obtenerEquipos();
+        this.vista.renderMostrarNumEquiposRegistrados(equipos);
+    }
+
+    promedioEdadJugadores() {
+        let jugadores = this.modeloJugador.obtenerJugadores();
+        this.vista.renderPromedioEdadJugadores(jugadores);
     }
 
    

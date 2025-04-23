@@ -137,7 +137,6 @@ class Vista {
     }
 
     renderMostrarJugadoresPorEquipo(jugadores, equipos) {
-        console.log("entro vista");
     
         // Limpiar el contenedor antes de añadir la nueva tabla
         $("#resultadoEstadisticas").empty();
@@ -178,36 +177,33 @@ class Vista {
     
     
 
-    //funcion para mostrar el numero de jugadores registrados
     renderMostrarNumJugadoresRegistrados(jugadores) {
 
-        //contador para ver cuántos jugadores hay
-        let contador = 0;
-
-        for (let i = 0; i < jugadores.length; i++) {
-            contador++;
-        }
-
-        //donde va a ir
-        let mostrarTotalJugadore = "<h2>Total de jugadores</h2>" + "<br>" + contador;
-
-        $("#resultadoEstadisticas").append(mostrarTotalJugadore);
-
+        // Vaciar el div
+        $("#resultadoEstadisticas").empty();
+    
+        // Obtener el número total directamente
+        let total = jugadores.length;
+    
+        // Mostrar el total
+        let mostrarTotalJugadores = "<h2>Total de jugadores</h2><p class='fs-4'>" + total + "</p>";
+    
+        $("#resultadoEstadisticas").append(mostrarTotalJugadores);
     }
+    
 
     //funcion para mostrar el numero de equipos registrados
     renderMostrarNumEquiposRegistrados(equipos) {
 
-        //contador para ver cuántos equipos hay
-        let contador = 0;
-
-        for (let i = 0; i < equipos.length; i++) {
-            contador++;
-        }
-
-        //donde va a ir
-        let mostrarTotalEquipos = "<h2>Total de equipos</h2>" + "<br>" + contador;
-
+        // Vaciar el div
+        $("#resultadoEstadisticas").empty();
+    
+        // Obtener el número total directamente
+        let total = equipos.length;
+    
+        // Mostrar el total
+        let mostrarTotalEquipos = "<h2>Total de equipos</h2><p class='fs-4'>" + total + "</p>";
+    
         $("#resultadoEstadisticas").append(mostrarTotalEquipos);
 
     }
