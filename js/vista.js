@@ -178,6 +178,47 @@ class Vista {
     
     
 
+    //funcion para mostrar el numero de jugadores registrados
+    renderMostrarNumJugadoresRegistrados(jugadores) {
+
+        //contador para ver cuántos jugadores hay
+        let contador = 0;
+
+        for (let i = 0; i < jugadores.length; i++) {
+            contador++;
+        }
+
+        //donde va a ir
+        let mostrarTotalJugadore = "<h2>Total de jugadores</h2>" + "<br>" + contador;
+
+        $("#resultadoEstadisticas").append(mostrarTotalJugadore);
+
+    }
+
+    //funcion para mostrar el numero de equipos registrados
+    renderMostrarNumEquiposRegistrados(equipos) {
+
+        //contador para ver cuántos equipos hay
+        let contador = 0;
+
+        for (let i = 0; i < equipos.length; i++) {
+            contador++;
+        }
+
+        //donde va a ir
+        let mostrarTotalEquipos = "<h2>Total de equipos</h2>" + "<br>" + contador;
+
+        $("#resultadoEstadisticas").append(mostrarTotalEquipos);
+
+    }
+
+    //promedio de edad de los jugadores
+    renderPromedioEdadJugadores(jugadores) {
+
+
+
+    }
+
     //Se encarga de limpiar los inputs cada vez que se pulsa el botón de enviar
     clearInputs() {
         document.getElementById("nombreEquipo").value = "";
