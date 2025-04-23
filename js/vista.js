@@ -99,9 +99,6 @@ class Vista {
             // obtengo el nombre del equipo
             let nombre = equipo.nombre;
 
-            // obtengo el id del equipo
-            let id = equipo.id;
-
             // creo la opcion para el select
             let opcion = "<option value='" + i + "'>" + nombre + "</option>";
 
@@ -125,9 +122,6 @@ class Vista {
             // obtengo el nombre del jugador
             let nombre = jugador.nombre;
 
-            // obtengo el id del jugador
-            let id = jugador.id;
-
             // creo la opcion para el select
             let opcion = "<option value='" + i + "'>" + nombre + "</option>";
 
@@ -136,21 +130,18 @@ class Vista {
         }
     }
 
+    //función que muestra los jugadores por equipo
     renderMostrarJugadoresPorEquipo(jugadores, equipos) {
-<<<<<<< HEAD
-=======
-        
->>>>>>> e92cc62a34916f0d35f9235132ffc90cba86d5dc
         // Limpiar el contenedor antes de añadir la nueva tabla
         $("#resultadoEstadisticas").empty();
 
-        // Crear la tabla
+        //crea una tabla
         let tabla = "<table id='tablaPlantillas' class='table table-bordered'></table>";
 
-        // Añadir la tabla al contenedor
+        //se añade la tabla al contenedor
         $("#resultadoEstadisticas").append(tabla);
 
-        // Recorro los equipos
+        //hacemos un for
         for (let i = 0; i < equipos.length; i++) {
             // Crear la fila con el nombre del equipo
             let filaEquipo = "<thead><tr><th colspan='2'>" + equipos[i].nombre + "</th></tr></thead>";
@@ -184,29 +175,29 @@ class Vista {
 
         // Vaciar el div
         $("#resultadoEstadisticas").empty();
-    
+
         // Obtener el número total directamente
         let total = jugadores.length;
-    
+
         // Mostrar el total
         let mostrarTotalJugadores = "<h2>Total de jugadores</h2><p class='fs-4'>" + total + "</p>";
-    
+
         $("#resultadoEstadisticas").append(mostrarTotalJugadores);
     }
-    
+
 
     //funcion para mostrar el numero de equipos registrados
     renderMostrarNumEquiposRegistrados(equipos) {
 
         // Vaciar el div
         $("#resultadoEstadisticas").empty();
-    
+
         // Obtener el número total directamente
         let total = equipos.length;
-    
+
         // Mostrar el total
         let mostrarTotalEquipos = "<h2>Total de equipos</h2><p class='fs-4'>" + total + "</p>";
-    
+
         $("#resultadoEstadisticas").append(mostrarTotalEquipos);
 
     }
@@ -214,13 +205,13 @@ class Vista {
     //promedio de edad de los jugadores
     renderPromedioEdadJugadores(jugadores) {
 
+        // Vaciar el div
+        $("#resultadoEstadisticas").empty();
+
         console.log("entro");
 
-        //almacena el año
-        let año;
-
         //suma de la edad
-        let suma;
+        let suma = 0;
 
         //contador
         let cont = jugadores.length;
@@ -228,18 +219,23 @@ class Vista {
         //media de la edad
         let mediaEdad;
 
-        for (let i = 0; i < jugadores.length; i++) { 
-            //almacena el año
-            año = jugadores[i].añoNacimiento;
 
-            console.log("año");
+        //guardar el año actual
+        const añoActual = new Date().getFullYear();
 
-            //sumo el año
-            suma += año;
+        for (let i = 0; i < jugadores.length; i++) {
+            //creo una variable que almacena el año de nacimiento del jugador
+            const añoNacimiento = parseInt(jugadores[i].añoNacimiento)
+
+            //calculo la edad del jugador
+            const edad = añoActual - añoNacimiento;
+
+            //sumo la edad a la variable de suma
+            suma += edad;
         }
 
         //hago la media
-        mediaEdad = año / cont;
+        mediaEdad = suma / cont;
 
         let promedioEdad = "<h2>Promedio de edad de los jugadores</h2>" + "<br>" + mediaEdad;
 
