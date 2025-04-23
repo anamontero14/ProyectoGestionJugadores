@@ -45,7 +45,7 @@ class Vista {
                 "<td>" + tdNombre + "</td>" +
                 "<td>" + tdFechaNacimiento + "</td>" +
                 "<td>" + tdPosicion + "</td>" +
-                "<td>" + "<button type='button' id='" + i + "'>Modificar</button>" + " "
+                "<td>"
                 + "<button type='button' id='" + i + "'>Eliminar</button>" + "</td>" + "</tr>";
 
             $("#cuerpoTablaJugadores").append(fila);
@@ -84,28 +84,6 @@ class Vista {
 
     }
 
-    renderAsignarJugadorEquipo(jugadores, equipos) {
-
-        for (let i = 0; i < jugadores.length; i++) {
-            //recojo el nombre del jugador
-            let nombreJugador = jugadores[i].nombre;
-            //creo la opcion
-            const opcionJugador = "<option value='" + i + "'>" + nombreJugador + "</option"
-            //la meto
-            $("#selectJugadores").append(opcionJugador);
-        }
-
-        for (let i = 0; i < equipos.length; i++) {
-            //recojo el nombre del equipo
-            let nombreEquipo = equipos[i].nombre;
-            //creo la opcion
-            const opcionEquipo = "<option value='" + i + "'>" + nombreEquipo + "</option"
-            //la meto
-            $("#selectEquipo").append(opcionEquipo);
-        }
-
-    }
-
     // funcion para renderizar el select de los equipos
     renderSelectEquipos(equipos) {
 
@@ -132,36 +110,34 @@ class Vista {
         }
     }
 
-        // funcion para renderizar el select de los jugadores
-        renderSelectJugadores(jugadores) {
+    // funcion para renderizar el select de los jugadores
+    renderSelectJugadores(jugadores) {
 
-            // limpiar el select
-            $("#selectJugador").empty();
-    
-            // recorro el array jugadores
-            for (let i in jugadores) {
-    
-                // obtengo el jugador
-                let jugador = jugadores[i];
-    
-                // obtengo el nombre del jugador
-                let nombre = jugador.nombre;
-    
-                // obtengo el id del jugador
-                let id = jugador.id;
-    
-                // creo la opcion para el select
-                let opcion = "<option value='" + i + "'>" + nombre + "</option>";
-    
-                // añado la opcion al select
-                $("#selectJugador").append(opcion);
-            }
+        // limpiar el select
+        $("#selectJugador").empty();
+
+        // recorro el array jugadores
+        for (let i in jugadores) {
+
+            // obtengo el jugador
+            let jugador = jugadores[i];
+
+            // obtengo el nombre del jugador
+            let nombre = jugador.nombre;
+
+            // obtengo el id del jugador
+            let id = jugador.id;
+
+            // creo la opcion para el select
+            let opcion = "<option value='" + i + "'>" + nombre + "</option>";
+
+            // añado la opcion al select
+            $("#selectJugador").append(opcion);
         }
+    }
 
-    /*
-    calcularEdad(añoNacimiento) {
-        const añoActual = new Date().getFullYear();
-        return añoActual - new Date(añoNacimiento).getFullYear();
+    /*renderMostrarJugadoresPorEquipo() {
+
     }*/
 
     //Se encarga de limpiar los inputs cada vez que se pulsa el botón de enviar
