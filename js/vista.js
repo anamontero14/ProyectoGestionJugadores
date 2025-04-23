@@ -76,7 +76,7 @@ class Vista {
                 "<td>" + tdNombre + "</td>" +
                 "<td>" + tdCiudad + "</td>" +
                 "<td>" + tdEstadio + "</td>" +
-                "<td>" + "<button type='button' id='" + i + "'>Modificar</button>" + " " +
+                "<td>" +
                 "<button type='button' id='" + i + "'>Eliminar</button>" + "</td>" + "</tr>";
 
             $("#cuerpoTablaEquipos").append(fila);
@@ -136,9 +136,39 @@ class Vista {
         }
     }
 
-    /*renderMostrarJugadoresPorEquipo() {
+    renderMostrarJugadoresPorEquipo(jugadores, equipos) {
 
-    }*/
+        //variable donde se guardará el numero
+        let numEquipo;
+
+        //recorro los equipos
+        for (let i = 0; i < equipos.length; i++) {
+            //objeto de la tabla
+            let tabla = "<table>" + "<th>" + "<td>ID</td>" + "<td>" + equipos[i].nombre
+                + "</td>" + "</th>";
+
+            //recorro los jugadores
+            for (let j = 0; j < jugadores.length; j++) {
+                //asigno el numero del equipo a la variable
+                numEquipo = jugadores[j].equipo;
+
+                //si el numero del equipo es igual a la i
+                if (numEquipo = i) {
+                    let fila = "<tr>" + "<td>" + j + "</td>" + "<td>" + jugadores[j].nombre + "</td>" + "</tr>";
+
+                    //le añado eso a la tabla
+                    tabla += fila;
+                }
+            }
+
+            //cerrar la tabla
+            tabla += "</table>";
+
+            //append
+            $("#resultadoEstadisticas").append(tabla);
+        }
+
+    }
 
     //Se encarga de limpiar los inputs cada vez que se pulsa el botón de enviar
     clearInputs() {
