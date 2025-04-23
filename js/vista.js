@@ -161,7 +161,7 @@ class Vista {
     
             for (let j = 0; j < jugadores.length; j++) {
                 // Si el jugador pertenece al equipo
-                if (jugadores[j].equipo === i) {
+                if (jugadores[j].equipo == i) {
                     let filaJugador = "<tr><td>" + jugadores[j].nombre + "</td><td>" + jugadores[j].posicion + "</td></tr>";
                     $("#tablaPlantillas").append(filaJugador);
                     jugadoresEquipo = true; // Hay jugadores para este equipo
