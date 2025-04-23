@@ -138,27 +138,27 @@ class Vista {
 
     renderMostrarJugadoresPorEquipo(jugadores, equipos) {
         console.log("entro vista");
-    
+
         // Limpiar el contenedor antes de añadir la nueva tabla
         $("#resultadoEstadisticas").empty();
-    
+
         // Crear la tabla
         let tabla = "<table id='tablaPlantillas' class='table table-bordered'></table>";
-    
+
         // Añadir la tabla al contenedor
         $("#resultadoEstadisticas").append(tabla);
-    
+
         // Recorro los equipos
         for (let i = 0; i < equipos.length; i++) {
             // Crear la fila con el nombre del equipo
             let filaEquipo = "<thead><tr><th colspan='2'>" + equipos[i].nombre + "</th></tr></thead>";
-    
+
             // Añadir la fila del equipo a la tabla
             $("#tablaPlantillas").append(filaEquipo);
-    
+
             // Recorro los jugadores
             let jugadoresEquipo = false; // bandera para ver si se añaden jugadores
-    
+
             for (let j = 0; j < jugadores.length; j++) {
                 // Si el jugador pertenece al equipo
                 if (jugadores[j].equipo == i) {
@@ -167,7 +167,7 @@ class Vista {
                     jugadoresEquipo = true; // Hay jugadores para este equipo
                 }
             }
-    
+
             // Si no hay jugadores para un equipo, agregar una fila vacía
             if (!jugadoresEquipo) {
                 let filaSinJugadores = "<tr><td colspan='2'>No hay jugadores en este equipo</td></tr>";
@@ -175,8 +175,8 @@ class Vista {
             }
         }
     }
-    
-    
+
+
 
     //funcion para mostrar el numero de jugadores registrados
     renderMostrarNumJugadoresRegistrados(jugadores) {
@@ -215,7 +215,34 @@ class Vista {
     //promedio de edad de los jugadores
     renderPromedioEdadJugadores(jugadores) {
 
+        //almacena el año
+        let año;
 
+        //suma de la edad
+        let suma;
+
+        //contador
+        let cont = jugadores.length;
+
+        //media de la edad
+        let mediaEdad;
+
+        for (let i = 0; i < jugadores.length; i++) { 
+            //almacena el año
+            año = jugadores[i].añoNacimiento;
+
+            console.log(año);
+
+            //sumo el año
+            suma += año;
+        }
+
+        //hago la media
+        mediaEdad = año / cont;
+
+        let promedioEdad = "<h2>Promedio de edad de los jugadores</h2>" + "<br>" + mediaEdad;
+
+        $("#resultadoEstadisticas").append(promedioEdad);
 
     }
 
